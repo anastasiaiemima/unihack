@@ -1,0 +1,1 @@
+ D:\\unihack2023\\.dart_tool\\flutter_build\\e8acaf949a75ddac3005ffa21a0070a6\\native_assets.yaml: 
