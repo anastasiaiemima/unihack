@@ -44,9 +44,10 @@ class _RegisterPageState extends State<RegisterPage> {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Container(
+                padding: EdgeInsets.only(bottom: 5.0,left:10.0, right:10.0,top: 5.0),
                 width: 300,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15),
+                  borderRadius: BorderRadius.circular(20),
                   color: Colors.blueGrey[50],
                   border: Border.all(color: Colors.blue),
                 ),
@@ -59,13 +60,14 @@ class _RegisterPageState extends State<RegisterPage> {
                         color: Colors.black,
                       ),
                     ),
-                    contentPadding: EdgeInsets.all(15.0),
+                    contentPadding: EdgeInsets.symmetric(vertical: 5.0, horizontal: 10.0),
                   ),
                 ),
               ),
             ),
             const SizedBox(height: 5),
             Container(
+              padding: EdgeInsets.only(bottom: 5.0,left:10.0, right:10.0,top: 5.0),
               width: 300,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
@@ -82,12 +84,13 @@ class _RegisterPageState extends State<RegisterPage> {
                       color: Colors.black,
                     ),
                   ),
-                  contentPadding: EdgeInsets.all(15.0),
+                  contentPadding: EdgeInsets.symmetric(vertical: 5.0, horizontal: 10.0),
                 ),
               ),
             ),
             const SizedBox(height: 10),
             Container(
+              padding: EdgeInsets.only(bottom: 5.0,left:10.0, right:10.0,top: 5.0),
               width: 300,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
@@ -104,14 +107,13 @@ class _RegisterPageState extends State<RegisterPage> {
                       color: Colors.black,
                     ),
                   ),
-                  contentPadding: EdgeInsets.all(15.0),
+                  contentPadding: EdgeInsets.symmetric(vertical: 5.0, horizontal: 10.0),
                 ),
               ),
             ),
-            const SizedBox(height: 10),
-
+            const SizedBox(height: 30),
             //sing in button
-            MyButton(text: 'sign up'),
+            const MyButton(text: 'sign up'),
             const SizedBox(height: 30),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,

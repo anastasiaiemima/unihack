@@ -4,7 +4,7 @@ import 'package:unihack2023/components/event.dart';
 class EventCard extends StatefulWidget {
   final Event event;
 
-  EventCard({required this.event});
+  EventCard({ required this.event});
 
   @override
   _EventCardState createState() => _EventCardState();
@@ -20,12 +20,14 @@ class _EventCardState extends State<EventCard> {
         maxWidth: 30.0,
       ),
       child:Card(
+        surfaceTintColor: Colors.blue[200],
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.all(Radius.circular(35.0)),
       ),
-      elevation: 5.0,
-      margin: const EdgeInsets.all(15.0),
+      elevation: 6.0,
+      margin: const EdgeInsets.all(30.0),
       borderOnForeground: true,
+      shadowColor: Colors.blue[300],
       child: Column(
         children: [
           Stack(
@@ -47,7 +49,7 @@ class _EventCardState extends State<EventCard> {
                 right: 0.0,
                 child: Container(
                   decoration: BoxDecoration(
-                    color: Colors.blue[100],
+                    color: Colors.blueAccent.withOpacity(0.8),
                     borderRadius: const BorderRadius.only(
                       topLeft: Radius.circular(10.0),
                       bottomLeft: Radius.circular(10.0),
@@ -130,26 +132,29 @@ class _EventCardState extends State<EventCard> {
               ),
             ),
           Padding(
-            padding: const EdgeInsets.all(10.0),
+            padding: const EdgeInsets.only(right:10.0,bottom: 20.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 if(widget.event.free)
-                  OutlinedButton(onPressed: (){},
-                      style: OutlinedButton.styleFrom(
-                      side: BorderSide(
-                        color: Colors.blue[200]!,
+                  Padding(
+                    padding: const EdgeInsets.only(right:10.0),
+                    child: OutlinedButton(onPressed: (){},
+                        style: OutlinedButton.styleFrom(
+                        side: BorderSide(
+                          color: Colors.blue[200]!,
+                        ),
                       ),
-                    ),
-                    child: Text(
-                      'FREE',
-                      style: TextStyle(
-                        color: Colors.blue[200],
+                      child: Text(
+                        'FREE',
+                        style: TextStyle(
+                          color: Colors.blue[200],
+                        ),
                       ),
                     ),
                   ),
-                Padding(padding: EdgeInsets.only(right: 10.0)),
                 ElevatedButton(
+
                   onPressed: () {
                     setState(() {
                       widget.event.isFavorite = !widget.event.isFavorite;
@@ -159,10 +164,12 @@ class _EventCardState extends State<EventCard> {
                     });
                   },
                   style:ButtonStyle(
+
                     backgroundColor: MaterialStateProperty.all<Color>(
                       widget.event.isFavorite ? Colors.blue : Colors.white,
                     ),
                   ),
+
                   child: Row(
                     children: [
                       Icon(
@@ -173,7 +180,8 @@ class _EventCardState extends State<EventCard> {
                         widget.event.likeCount.toString(),
                         style: TextStyle(
                           color: Colors.blue[200],
-                        )
+
+                        ),
                       ),
                     ],
                   ),
@@ -181,22 +189,30 @@ class _EventCardState extends State<EventCard> {
                 const Padding(
                   padding: EdgeInsets.only(right:10.0),
                 ),
-                  ElevatedButton(
-                    onPressed: () {
-                      setState(() {
-                        isExpanded = !isExpanded;
-                      });
-                    },
-                    child: Text(
-                      isExpanded ? 'Show Less' : 'Show More',
-                      style: TextStyle(
-                        color: Colors.blue[200],
+                const Divider(
+                  color: Colors.black,
+                  thickness: 10.0,
+                ),
+                  Padding(
+                    padding: const EdgeInsets.only(right:20.0),
+                    child: ElevatedButton(
+                      onPressed: () {
+                        setState(() {
+                          isExpanded = !isExpanded;
+                        });
+                      },
+                      child: Text(
+                        isExpanded ? 'Show Less' : 'Show More',
+                        style: TextStyle(
+                          color: Colors.blue[200],
+                        ),
                       ),
                     ),
                   ),
               ],
             ),
           ),
+          const Padding(padding: EdgeInsets.only(bottom: 10.0)),
         ],
       ),
     )

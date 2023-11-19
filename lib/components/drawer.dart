@@ -3,6 +3,8 @@ import 'package:unihack2023/main.dart';
 import 'package:unihack2023/maps_page.dart';
 import 'package:unihack2023/profile_page.dart';
 import 'package:unihack2023/favorites_page.dart';
+import 'package:unihack2023/components/event.dart';
+import 'package:unihack2023/main.dart';
 
 class AppDrawer extends StatelessWidget {
   @override
@@ -79,7 +81,7 @@ class AppDrawer extends StatelessWidget {
             title: const Text('Near Me'),
             onTap: () {
               Navigator.pushReplacement(context,
-              MaterialPageRoute(builder: (context) => MapsPage())
+              MaterialPageRoute(builder: (context) => MapsPage(events: eventsmock))
               );
             },
           ),

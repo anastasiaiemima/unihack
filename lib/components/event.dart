@@ -10,6 +10,8 @@ class Event{
   final String? category;
   bool isFavorite;
   num likeCount;
+  double? lng;
+  double? lat;
 
   Event({
     required this.name,
@@ -21,6 +23,8 @@ class Event{
     required this.free,
     this.category,
     this.isFavorite = false,
-    this.likeCount = 0
+    this.likeCount = 0,
+    this.lng,
+    this.lat,
   });
 }

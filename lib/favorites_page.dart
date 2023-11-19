@@ -8,7 +8,7 @@ class FavoritesPage extends StatefulWidget {
 
 
 
-  FavoritesPage({required this.events});
+  const FavoritesPage({super.key, required this.events});
 
   @override
   _FavoritesPageState createState() => _FavoritesPageState(events: events);
@@ -19,8 +19,6 @@ class _FavoritesPageState extends State<FavoritesPage> {
   final List<Event> events;
 
   _FavoritesPageState({required this.events});
-
-
 
   @override
   Widget build(BuildContext context) {
